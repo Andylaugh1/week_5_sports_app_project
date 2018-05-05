@@ -2,8 +2,9 @@ require('pry')
 require_relative('../models/game.rb')
 require_relative('../models/team.rb')
 
-Team.delete_all
 Game.delete_all
+Team.delete_all
+
 
 team1 = Team.new ({
   "name" => "Gryffindor"

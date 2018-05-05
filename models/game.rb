@@ -27,6 +27,22 @@ class Game
     SqlRunner.run(sql, values)
   end
 
+  def get_home_team_name
+    sql = "SELECT teams.name FROM teams LEFT JOIN games ON games.home_team_id = teams.id WHERE games.id = $1"
+    values = [@id]
+    team_data = SqlRunner.run(sql, values)
+    result = Team.new(team_data.first)
+    return result.name
+  end
+
+  def get_away_team_name
+    sql = "SELECT teams.name FROM teams LEFT JOIN games ON games.away_team_id = teams.id WHERE games.id = $1"
+    values = [@id]
+    team_data = SqlRunner.run(sql, values)
+    result = Team.new(team_data.first)
+    return result.name
+  end
+
   def self.find(id)
     sql = "SELECT * FROM games WHERE id = $1"
     values = [id]
