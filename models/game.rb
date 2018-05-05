@@ -22,14 +22,14 @@ class Game
   end
 
   def delete()
-    sql = "DELETE * FROM games WHERE id = $1"
+    sql = "DELETE FROM games WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end
 
   def self.find(id)
     sql = "SELECT * FROM games WHERE id = $1"
-    values = [@id]
+    values = [id]
     game_data = SqlRunner.run(sql, values)
     return Game.new(game_data.first)
   end
