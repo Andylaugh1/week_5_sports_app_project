@@ -1,0 +1,21 @@
+body {
+  background: black url(http://cdn1-www.comingsoon.net/assets/uploads/2014/03/file_116019_0_quidditch1.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+h1 {
+  font-family: fantasy;
+  font-size: 3em;
+  text-align: center;
+}
+
+nav ul li {
+  font-size: 1.6em;
+  display: flex;
+  display: inline-block;
+  justify-content: center;
+  color: white;
+
+}
