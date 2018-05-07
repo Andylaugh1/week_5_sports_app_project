@@ -43,6 +43,18 @@ class Game
     return result.name
   end
 
+  def display_who_won
+    name1 = get_home_team_name
+    name2 = get_away_team_name
+    if @home_team_score > @away_team_score
+      return "#{name1} won"
+    elsif @away_team_score < @home_team_score
+      return "#{name2} won"
+    else
+      return "The game was a draw"
+    end    
+  end
+
   def self.find(id)
     sql = "SELECT * FROM games WHERE id = $1"
     values = [id]
