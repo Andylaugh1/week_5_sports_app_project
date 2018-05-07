@@ -6,9 +6,8 @@
 
 <hr/>
 
-<p><a href="/games/<%= @game.id %>/edit">Edit Game</a></p>
+<form action="/games/<%= @game.id %>/edit" method="get"> <input type="submit" name="Edit" value="Edit Result">
+</form>
 
 <form action="/games/<%= @game.id %>/delete" method="post"> <input type="submit" name="Delete" value="Delete Result">
-
-
 </form>

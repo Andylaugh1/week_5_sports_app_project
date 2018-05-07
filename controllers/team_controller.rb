@@ -23,15 +23,16 @@ end
 # SHOW TEAM
 get '/teams/:id' do
   @team = Team.find(params[:id])
+  @games = @team.show_team_games
   erb(:"team/show")
 end
 
 # SHOW GAMES FOR TEAM
-get '/teams/:id/games' do
-  team = Team.find(params[:id])
-  @games = team.show_team_games
-  erb(:"team/show_games")
-end
+# get '/teams/:id/games' do
+#   team = Team.find(params[:id])
+#   @games = team.show_team_games
+#   erb(:"team/show_games")
+# end
 
 
 # DELETE TEAM
