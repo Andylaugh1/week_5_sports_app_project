@@ -64,11 +64,18 @@ class Game
 
   # def add_points
 
-  def team()
-    sql = "SELECT * FROM teams WHERE id =$1"
+  def home_team()
+    sql = "SELECT * FROM teams WHERE id = $1"
     values = [@id]
     results = SqlRunner.run(sql, values)
     return Team.new(results.first)
+  end
+
+  def away_team()
+    sql = "SELECT * FROM teams WHERE id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return Team.new(results[1])
   end
 
   def self.find(id)
