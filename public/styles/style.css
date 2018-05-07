@@ -3,6 +3,7 @@ body {
   background-size: 100%;
   background-repeat: no-repeat;
   color: white;
+  display: flex;
 }
 
 h1 {
@@ -13,9 +14,22 @@ h1 {
 
 nav ul li {
   font-size: 1.6em;
-  display: flex;
   display: inline-block;
-  justify-content: center;
+  justify-content: space-between;
+  text-decoration: none;
   color: white;
+  padding:20px;
+}
 
+li a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+table, tr, td {
+  font-size: 1em;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  padding: 20px;
 }

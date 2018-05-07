@@ -6,13 +6,14 @@
     <link rel="stylesheet" href="/styles/style.css">
   </head>
   <body>
-      <%= yield %>
     <nav>
       <ul>
-        <li><a href="/teams">List of Teams</a></li>
-        <li><a href="/teams/new">Add a New Team</a></li>
+        <li><a href="/teams" style="text-decoration: none">List of Teams</a></li>
+        <li><a href="/teams/new" style="text-decoration: none">Add a New Team</a></li>
       </ul>
     </nav>
+    
+    <%= yield %>
 
   </body>
 </html>

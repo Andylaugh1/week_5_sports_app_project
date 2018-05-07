@@ -1,0 +1,30 @@
+<h1>Add the Most Recent Results</h1>
+
+<form action="/games" method="post">
+  <label>
+    Select Home Team:
+    <select name="home_team_id">
+      <% for team in @teams %>
+      <option value="<%= team.id %>"> <%= team.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label>
+    Select Away Team:
+    <select name="away_team_id">
+      <% for team in @teams %>
+      <option value="<%= team.id %>"> <%= team.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label for="home-team-score">Home Team Score</label>
+  <input type="number" name="home_team_score" id="home-team-score">
+
+  <label for="away-team-score">Away Team Score</label>
+  <input type="number" name="away_team_score" id="away-team-score">
+
+  <input type="submit" value="Add Result to Championship">
+
+</form>
