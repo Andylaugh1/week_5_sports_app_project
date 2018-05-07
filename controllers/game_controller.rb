@@ -1,3 +1,4 @@
+require('pry')
 require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/game.rb')
@@ -27,6 +28,19 @@ end
 get '/games/:id' do
   @game = Game.find(params[:id])
   erb(:"game/show")
+end
+
+# UPDATE Game
+get '/games/:id/edit' do
+  @teams = Team.all
+  @game = Game.find(params[:id])
+  erb(:"game/edit")
+end
+
+post '/games/:id/edit' do
+  @game = Game.new(params)
+  @game.update()
+  redirect to("/games")
 end
 
 # DELETE GAME

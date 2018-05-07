@@ -27,6 +27,13 @@ class Game
     SqlRunner.run(sql, values)
   end
 
+  def update()
+    sql = "UPDATE games SET (home_team_id, away_team_id, home_team_score, away_team_score) =
+          ($1, $2, $3, $4) WHERE id = $5"
+    values = [@home_team_id, @away_team_id, @home_team_score, @away_team_score, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def get_home_team_name
     sql = "SELECT teams.name FROM teams LEFT JOIN games ON games.home_team_id = teams.id WHERE games.id = $1"
     values = [@id]
@@ -48,11 +55,20 @@ class Game
     name2 = get_away_team_name
     if @home_team_score > @away_team_score
       return "#{name1} won"
-    elsif @away_team_score < @home_team_score
+    elsif @away_team_score > @home_team_score
       return "#{name2} won"
     else
       return "The game was a draw"
-    end    
+    end
+  end
+
+  # def add_points
+
+  def team()
+    sql = "SELECT * FROM teams WHERE id =$1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return Team.new(results.first)
   end
 
   def self.find(id)
