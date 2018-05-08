@@ -1,10 +1,11 @@
 require('pry')
 require_relative('../models/game.rb')
 require_relative('../models/team.rb')
+require_relative('../models/player.rb')
 
 Game.delete_all
+Player.delete_all
 Team.delete_all
-
 
 team1 = Team.new ({
   "name" => "Gryffindor"
@@ -25,6 +26,7 @@ team4 = Team.new ({
   "name" => "Ravenclaw"
   })
 team4.save
+
 
 game1 = Game.new({
    "home_team_id" => team1.id,
@@ -57,6 +59,22 @@ game4 = Game.new({
    "away_team_score" => 120
   })
 game4.save
+
+player1 = Player.new ({
+  "first_name" => "Harry",
+  "last_name" => "Potter",
+  "position" => "Seeker",
+  "team_id" => team1.id
+  })
+player1.save
+
+player2 = Player.new ({
+  "first_name" => "Draco",
+  "last_name" => "Malfoy",
+  "position" => "Seeker",
+  "team_id" => team2.id
+  })
+player2.save
 
 binding.pry
 nil

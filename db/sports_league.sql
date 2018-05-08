@@ -1,6 +1,6 @@
 DROP TABLE games;
-DROP TABLE teams;
 DROP TABLE players;
+DROP TABLE teams;
 
 CREATE table teams (
   id SERIAL4 PRIMARY KEY,
@@ -12,7 +12,7 @@ CREATE table players (
   first_name VARCHAR(255),
   last_name VARCHAR(255),
   position VARCHAR(255),
-  team_id INT4 REFERENCES teams(id) ON DELETE CASCADE
+  team_id INT4 REFERENCES teams(id)
 );
 
 CREATE table games (

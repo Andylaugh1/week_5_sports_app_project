@@ -13,6 +13,36 @@ class Player
     @team_id = options['team_id'].to_i
   end
 
-  
+  def save()
+    sql = "INSERT INTO players (first_name, last_name,
+        position, team_id) VALUES ($1, $2, $3, $4) RETURNING *"
+    values = [@first_name, @last_name, @position, @team_id]
+    player_data = SqlRunner.run(sql, values)
+    @id = player_data.first()['id'].to_i
+  end
+
+  def delete()
+    sql = "DELETE FROM players WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def player_full_name()
+    return "#{first_name}" + " #{last_name}"
+  end
+
+  def get_player_team_name()
+    teams = Team.all
+    for team in teams
+      if team.id == @team_id
+        return team.name
+      end
+    end
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM players"
+    SqlRunner.run(sql)
+  end
 
 end
