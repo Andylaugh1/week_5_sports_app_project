@@ -30,6 +30,10 @@ class Team
     return game_data.map { |game| Game.new (game)}
   end
 
+  def games_played()
+    return show_team_games.count
+  end
+
   def calculate_victories()
     sql = "SELECT * FROM games WHERE
       (home_team_id = $1 AND home_team_score > away_team_score)
