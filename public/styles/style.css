@@ -36,6 +36,9 @@ th {
   background-color: lightgrey;
 }
 
-.superstars {
+.add-superstar ul li {
+  width: 100%;
+  margin: 0 auto;
   background-color: red;
+  text-align: center;
 }

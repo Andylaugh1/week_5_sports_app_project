@@ -16,6 +16,12 @@ get '/players/new' do
   erb(:"player/new")
 end
 
+post '/players' do
+  player = Player.new(params)
+  player.save()
+  redirect to("/players")
+end
+
 # SHOW INDIVIDUAL PLAYER
 
 # DELETE PLAYER
