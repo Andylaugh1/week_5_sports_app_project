@@ -5,6 +5,14 @@ h1 {
   color: forestgreen;
 }
 
+ul li {
+  display: inline;
+  margin: 0px 20px 0px 20px;
+  padding: 5px 10px 5px 10px;
+  border: 1px solid black;
+  background-color: lightgreen;
+}
+
 table {
   width: 100%;
 }
@@ -25,4 +33,5 @@ td {
 th {
   color: black;
   font-size: 1.5em;
+  background-color: lightgrey;
 }
