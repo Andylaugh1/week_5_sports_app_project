@@ -5,7 +5,7 @@ require_relative('../models/game.rb')
 
 # READ ALL TEAMS
 get '/teams' do
-  @teams = Team.all()
+  @teams = Team.sort_by_points()
   erb( :"team/index" )
 end
 

@@ -3,12 +3,22 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Games Won</th>
+    <th>Games Drawn</th>
+    <th>Games Lost</th>
+    <th>Goal Difference</th>
     <th>Points</th>
   </tr>
   <% for team in @teams  %>
   <tr>
     <td><a href="/teams/<%= team.id  %>"><%= team.name %></a></td>
-    <td><a href="/teams/<%= team.id  %>"><%= team.calculate_team_points %>
+    <td><a href="/teams/<%= team.id  %>"><%= team.calculate_victories %></a></td>
+    <td><a href="/teams/<%= team.id  %>"><%= team.calculate_draws %></a></td>
+    <td><a href="/teams/<%= team.id  %>"><%= team.calculate_losses %></a></td>
+    <td><a href="/teams/<%= team.id  %>"><%= team.calculate_team_goal_difference %></a></td>
+    <td><a href="/teams/<%= team.id  %>"><%= team.calculate_team_points %></a></td>
   </tr>
   <% end  %>
 </table>
+
+<hr>

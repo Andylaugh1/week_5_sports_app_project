@@ -1,0 +1,19 @@
+h1 {
+
+}
+
+table {
+  width: 80%;
+}
+
+
+table, tr, th, td {
+  border: 1px solid black;
+  justify-content: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+td:6th-child {
+  font-weight: bold;
+}
