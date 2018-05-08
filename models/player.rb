@@ -49,6 +49,19 @@ class Player
 
   # CLASS METHODS BELOW
 
+  def self.find(id)
+    sql = "SELECT * FROM players WHERE id = $1"
+    values = [id]
+    player_data = SqlRunner.run(sql, values)
+    return Player.new(player_data.first)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM players"
+    player_data = SqlRunner.run(sql)
+    return player_data.map { |player| Player.new (player) }
+  end
+
   def self.delete_all()
     sql = "DELETE FROM players"
     SqlRunner.run(sql)

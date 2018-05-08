@@ -76,5 +76,29 @@ player2 = Player.new ({
   })
 player2.save
 
+player3 = Player.new ({
+  "first_name" => "Andy",
+  "last_name" => "Laughlin",
+  "position" => "Beater",
+  "team_id" => team1.id
+  })
+player3.save
+
+player4 = Player.new ({
+  "first_name" => "Alicia",
+  "last_name" => "Gonzalez",
+  "position" => "Goalkeeper",
+  "team_id" => team3.id
+  })
+player4.save
+
+player5 = Player.new ({
+  "first_name" => "Kirsty",
+  "last_name" => "Laughlin",
+  "position" => "Chaser",
+  "team_id" => team4.id
+  })
+player5.save
+
 binding.pry
 nil
