@@ -11,6 +11,10 @@ get '/players' do
 end
 
 # CREATE NEW PLAYER
+get '/players/new' do
+  @teams = Team.all
+  erb(:"player/new")
+end
 
 # SHOW INDIVIDUAL PLAYER
 
