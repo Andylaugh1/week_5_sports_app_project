@@ -1,5 +1,7 @@
 h1 {
-
+  font-family: fantasy;
+  font-size: 3em;
+  text-align: center;
 }
 
 table {
@@ -8,6 +10,7 @@ table {
 
 
 table, tr, th, td {
+  text-align: center;
   border: 1px solid black;
   justify-content: center;
   justify-content: space-between;
