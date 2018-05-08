@@ -1,12 +1,14 @@
-<h1>Teams</h1>
+<h1>Current League Table</h1>
 
 <table>
   <tr>
     <th>Name</th>
+    <th>Points</th>
   </tr>
   <% for team in @teams  %>
   <tr>
     <td><a href="/teams/<%= team.id  %>"><%= team.name %></a></td>
+    <td><a href="/teams/<%= team.id  %>"><%= team.calculate_team_points %>
   </tr>
   <% end  %>
 </table>

@@ -30,6 +30,43 @@ class Team
     return game_data.map { |game| Game.new (game)}
   end
 
+  def calculate_victories
+    sql = "SELECT * FROM games WHERE
+      (home_team_id = $1 AND home_team_score > away_team_score)
+      OR (away_team_id = $1 AND away_team_score > home_team_score)"
+    values = [@id]
+    game_data = SqlRunner.run(sql, values)
+    result = game_data.map { |game| Game.new (game)}
+    return result.count
+  end
+
+  def calculate_draws
+    sql = "SELECT * FROM games WHERE
+      (home_team_id = $1 AND home_team_score = away_team_score)
+      OR (away_team_id = $1 AND away_team_score = home_team_score)"
+    values = [@id]
+    game_data = SqlRunner.run(sql, values)
+    result = game_data.map { |game| Game.new (game)}
+    return result.count
+  end
+
+  def calculate_losses
+    sql = "SELECT * FROM games WHERE
+      (home_team_id = $1 AND home_team_score < away_team_score)
+      OR (away_team_id = $1 AND away_team_score < home_team_score)"
+    values = [@id]
+    game_data = SqlRunner.run(sql, values)
+    result = game_data.map { |game| Game.new (game)}
+    return result.count
+  end
+
+  def calculate_team_points
+    total_points = 0
+    total_points += (calculate_victories * 3)
+    total_points += calculate_draws
+    return total_points
+  end
+
   def self.find(id)
     sql = "SELECT * FROM teams WHERE id = $1"
     values = [id]

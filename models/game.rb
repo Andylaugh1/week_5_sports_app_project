@@ -62,9 +62,11 @@ class Game
     end
   end
 
-  # def add_team_points_points(team)
-  #   points = 0
-  #
+  # def get_team_victories
+  #   sql = "SELECT COUNT(*) FROM games WHERE (home_team_id = $1 AND home_team_score > away_team_score) OR away_team_id = $1 AND away_team_score > home_team_score)"
+  #   values = [@id]
+  #   team_data = SqlRunner.run(sql, values)
+  #   return result
   # end
 
   def home_team()
