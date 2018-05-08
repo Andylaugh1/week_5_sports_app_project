@@ -62,7 +62,10 @@ class Game
     end
   end
 
-  # def add_points
+  # def add_team_points_points(team)
+  #   points = 0
+  #
+  # end
 
   def home_team()
     sql = "SELECT * FROM teams WHERE id = $1"
