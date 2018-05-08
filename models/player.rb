@@ -27,6 +27,13 @@ class Player
     SqlRunner.run(sql, values)
   end
 
+  def update()
+    sql = "UPDATE players SET (first_name, last_name, position, team_id) =
+          ($1, $2, $3, $4) WHERE id = $5"
+    values = [@hfirst_name, @last_name, @position, @team_id, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def player_full_name()
     return "#{first_name}" + " #{last_name}"
   end
@@ -39,6 +46,8 @@ class Player
       end
     end
   end
+
+  # CLASS METHODS BELOW
 
   def self.delete_all()
     sql = "DELETE FROM players"
