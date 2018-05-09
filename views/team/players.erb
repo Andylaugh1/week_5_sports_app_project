@@ -1,0 +1,12 @@
+<h2><%= @team.name  %> Playing Roster:</h2>
+
+<% for player in @players  %>
+<p>First Name: <%= player.first_name  %></p>
+<p>Last Name:  <%= player.last_name  %></p>
+<p>Position: <%= player.position  %></p>
+<p>Transfer Value: <%= player.transfer_value  %></p>
+
+<hr>
+<hr>
+
+<% end %>

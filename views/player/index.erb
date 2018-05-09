@@ -10,7 +10,7 @@
   </tr>
   <% for player in @players %>
   <tr>
-    <td><a href="/players/<%= player.id  %>"><%= player.last_name %></a></td>
+    <td><a href="/players/<%= player.id  %>" style="text-decoration: none"><%= player.last_name %></a></td>
     <td><%= player.first_name %></a></td>
     <td><%= player.position %></a></td>
     <td><%= player.get_player_team_name %></a></td>

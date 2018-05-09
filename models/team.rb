@@ -31,6 +31,13 @@ class Team
     SqlRunner.run(sql, values)
   end
 
+  def show_players()
+    sql = "SELECT * FROM players WHERE team_id = $1"
+    values = [@id]
+    player_data = SqlRunner.run(sql, values)
+    return player_data.map { |player| Player.new (player) }
+  end
+
   def show_team_games()
     sql = "SELECT * FROM games WHERE home_team_id = $1 OR away_team_id = $1;"
     values = [@id]

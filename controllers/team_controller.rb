@@ -46,3 +46,10 @@ post '/teams/:id/delete' do
   team.delete
   redirect to 'teams'
 end
+
+# VIEW TEAM PLAYERS
+get '/teams/:id/players' do
+  @team = Team.find(params[:id])
+  @players = @team.show_players
+  erb(:"team/players")
+end
