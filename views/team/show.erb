@@ -3,8 +3,12 @@
 
 <form action="/teams/<%= @team.id %>/delete" method="post">
   <input type="submit" name="Delete" value="Delete Team">
-
 </form>
+
+<form action="/teams/<%= @team.id %>/edit" method="get"> <input type="submit" name="Edit" value="Edit Team">
+</form>
+
+<hr>
 
 <% for game in @games  %>
 <p><%= game.get_home_team_name%> <%= game.home_team_score  %></p>

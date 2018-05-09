@@ -27,13 +27,18 @@ get '/teams/:id' do
   erb(:"team/show")
 end
 
-# SHOW GAMES FOR TEAM
-# get '/teams/:id/games' do
-#   team = Team.find(params[:id])
-#   @games = team.show_team_games
-#   erb(:"team/show_games")
-# end
+# EDIT TEAM
 
+get '/teams/:id/edit' do
+  @team = Team.find(params[:id])
+  erb(:"team/edit")
+end
+
+post '/teams/:id/edit' do
+  @team = Team.new(params)
+  @team.update()
+  redirect to("/teams")
+end
 
 # DELETE TEAM
 post '/teams/:id/delete' do

@@ -48,6 +48,33 @@ class Player
     end
   end
 
+  def get_team_funds()
+    teams = Team.all
+    for team in teams
+      if team.id == @team_id
+        return team.transfer_funds
+      end
+    end
+  end
+
+  def get_player_team()
+    teams = Team.all
+    for team in teams
+      if team.id == @team_id
+        return team
+      end
+    end
+  end
+
+  def transfer_player(new_team)
+    old_team = self.get_player_team
+    old_team.transfer_funds += self.transfer_value
+    old_team.update()
+    new_team.transfer_funds -= self.transfer_value
+    self.team_id = new_team.id
+    return self
+  end
+
   # CLASS METHODS BELOW
 
   def self.find(id)

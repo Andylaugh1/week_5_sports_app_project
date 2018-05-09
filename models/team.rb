@@ -24,6 +24,13 @@ class Team
     SqlRunner.run(sql, values)
   end
 
+  def update()
+    sql = "UPDATE teams SET (name, transfer_funds) =
+          ($1, $2) WHERE id = $3"
+    values = [@name, @transfer_funds, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def show_team_games()
     sql = "SELECT * FROM games WHERE home_team_id = $1 OR away_team_id = $1;"
     values = [@id]

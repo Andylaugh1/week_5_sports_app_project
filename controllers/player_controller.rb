@@ -39,6 +39,7 @@ end
 post '/players/:id/edit' do
   @player = Player.new(params)
   @player.update()
+  @player.get_player_team_name
   redirect to("/players")
 end
 
