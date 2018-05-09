@@ -12,7 +12,8 @@ CREATE table players (
   first_name VARCHAR(255),
   last_name VARCHAR(255),
   position VARCHAR(255),
-  team_id INT4 REFERENCES teams(id)
+  team_id INT4 REFERENCES teams(id),
+  transfer_value INT4
 );
 
 CREATE table games (

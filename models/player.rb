@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 class Player
 
   attr_reader :id
-  attr_accessor :first_name, :last_name, :position, :team_id
+  attr_accessor :first_name, :last_name, :position, :team_id, :transfer_value
 
   def initialize(options)
     @id = options['id'].to_i
@@ -11,12 +11,13 @@ class Player
     @last_name = options['last_name']
     @position = options['position']
     @team_id = options['team_id'].to_i
+    @transfer_value = options['transfer_value'].to_i
   end
 
   def save()
     sql = "INSERT INTO players (first_name, last_name,
-        position, team_id) VALUES ($1, $2, $3, $4) RETURNING *"
-    values = [@first_name, @last_name, @position, @team_id]
+        position, team_id, transfer_value) VALUES ($1, $2, $3, $4, $5) RETURNING *"
+    values = [@first_name, @last_name, @position, @team_id, @transfer_value]
     player_data = SqlRunner.run(sql, values)
     @id = player_data.first()['id'].to_i
   end
@@ -28,9 +29,9 @@ class Player
   end
 
   def update()
-    sql = "UPDATE players SET (first_name, last_name, position, team_id) =
-          ($1, $2, $3, $4) WHERE id = $5"
-    values = [@first_name, @last_name, @position, @team_id, @id]
+    sql = "UPDATE players SET (first_name, last_name, position, team_id, transfer_value) =
+          ($1, $2, $3, $4, $5) WHERE id = $5"
+    values = [@first_name, @last_name, @position, @team_id, @transfer_value,  @id]
     SqlRunner.run(sql, values)
   end
 

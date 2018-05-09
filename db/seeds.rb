@@ -64,7 +64,8 @@ player1 = Player.new ({
   "first_name" => "Harry",
   "last_name" => "Potter",
   "position" => "Seeker",
-  "team_id" => team1.id
+  "team_id" => team1.id,
+  "transfer_value" => 100000
   })
 player1.save
 
@@ -72,7 +73,8 @@ player2 = Player.new ({
   "first_name" => "Draco",
   "last_name" => "Malfoy",
   "position" => "Seeker",
-  "team_id" => team2.id
+  "team_id" => team2.id,
+  "transfer_value" => 70000
   })
 player2.save
 
@@ -80,7 +82,8 @@ player3 = Player.new ({
   "first_name" => "Andy",
   "last_name" => "Laughlin",
   "position" => "Beater",
-  "team_id" => team1.id
+  "team_id" => team1.id,
+  "transfer_value" => 20000
   })
 player3.save
 
@@ -88,7 +91,8 @@ player4 = Player.new ({
   "first_name" => "Alicia",
   "last_name" => "Gonzalez",
   "position" => "Goalkeeper",
-  "team_id" => team4.id
+  "team_id" => team4.id,
+  "transfer_value" => 50000
   })
 player4.save
 
@@ -96,7 +100,8 @@ player5 = Player.new ({
   "first_name" => "Kirsty",
   "last_name" => "Laughlin",
   "position" => "Chaser",
-  "team_id" => team3.id
+  "team_id" => team3.id,
+  "transfer_value" => 40000
   })
 player5.save
 
