@@ -88,7 +88,7 @@ player4 = Player.new ({
   "first_name" => "Alicia",
   "last_name" => "Gonzalez",
   "position" => "Goalkeeper",
-  "team_id" => team3.id
+  "team_id" => team4.id
   })
 player4.save
 
@@ -96,7 +96,7 @@ player5 = Player.new ({
   "first_name" => "Kirsty",
   "last_name" => "Laughlin",
   "position" => "Chaser",
-  "team_id" => team4.id
+  "team_id" => team3.id
   })
 player5.save
 

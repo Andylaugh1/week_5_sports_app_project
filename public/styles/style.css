@@ -5,6 +5,16 @@ h1 {
   color: forestgreen;
 }
 
+body {
+  background-color: black;
+  color: white;
+}
+
+nav {
+  background-color: lightgrey;
+  padding: 5px;
+}
+
 ul li {
   display: inline;
   margin: 0px 20px 0px 20px;
@@ -19,14 +29,14 @@ table {
 
 
 table, tr, th, td {
-  border: 2px solid black;
+  border: 2px solid white;
   justify-content: center;
   justify-content: space-between;
   text-align: center;
 }
 
 td {
-  color: blue;
+  color: white;
   font-size: 1.2em;
 }
 
@@ -37,8 +47,9 @@ th {
 }
 
 .add-superstar ul li {
+  border: 3px solid black;
   width: 100%;
-  margin: 0 auto;
-  background-color: red;
+  margin-left: 500px;
+  background-color: white;
   text-align: center;
 }

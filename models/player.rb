@@ -30,7 +30,7 @@ class Player
   def update()
     sql = "UPDATE players SET (first_name, last_name, position, team_id) =
           ($1, $2, $3, $4) WHERE id = $5"
-    values = [@hfirst_name, @last_name, @position, @team_id, @id]
+    values = [@first_name, @last_name, @position, @team_id, @id]
     SqlRunner.run(sql, values)
   end
 

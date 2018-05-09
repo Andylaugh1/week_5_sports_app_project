@@ -1,0 +1,14 @@
+
+<p>Name: <%= @player.first_name%> <%= @player.last_name %></p>
+<p>Position: <%= @player.position%> </p>
+<p>Current Team: <%= @player.get_player_team_name %> </p>
+
+
+<hr>
+<form action="/players/<%= @player.id %>/edit" method="get"> <input type="submit" name="Edit" value="Edit Player">
+</form>
+
+<form action="/players/<%= @player.id %>/delete" method="post">
+  <input type="submit" name="Delete" value="Delete Player">
+
+</form>

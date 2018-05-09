@@ -1,0 +1,28 @@
+<form action="/players/<%= @players.id %>/edit" method="post">
+
+  <label for="player-first-name">Player First Name</label>
+  <input type="text" name="first_name" id="player-first-name">
+
+  <label for="player-last-name">Player Last Name</label>
+  <input type="text" name="last_name" id="player-last-name">
+
+  <label for="position-select">Select new position:</label>
+    <select id="position-select" name="position">
+      <option value="Goalkeeper">Goalkeeper</option>
+      <option value="Chaser">Chaser</option>
+      <option value="Beater">Beater</option>
+      <option value="Seeker">Seeker</option>
+    </select>
+
+  <label>
+    Select New Team:
+    <select name="team_id">
+      <% for team in @teams %>
+      <option value="<%= team.id %>"> <%= team.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <input type="submit" value="Update Superstar">
+
+</form>
