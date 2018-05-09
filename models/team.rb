@@ -140,7 +140,8 @@ class Team
   def self.sort_by_points
     team_points = self.all
     sorted_teams = team_points.sort { |t, s| s.calculate_team_points <=> t.calculate_team_points
-    }
+      if s.calculate_team_points == t.calculate_team_points
+        s.calculate_team_goal_difference <==> t.calculate_team_goal_difference}
     return sorted_teams
   end
 

@@ -6,8 +6,13 @@ h1 {
 }
 
 body {
-  background-color: black;
   color: white;
+  background-color: white;
+  margin: 0px 100px 0px 100px;
+}
+
+.main {
+  background-color: #DCDCDC;
 }
 
 nav {
@@ -36,9 +41,14 @@ table, tr, th, td {
 }
 
 td {
-  color: white;
+  color: black;
   font-size: 1.2em;
 }
+
+td:visited { text-decoration: none; color: white; }
+td:hover { text-decoration: none; color: white; }
+td:focus { text-decoration: none; color: white; }
+td:hover, td:active { text-decoration: none; color: white }
 
 th {
   color: black;
