@@ -3,16 +3,17 @@ require_relative('../db/sql_runner.rb')
 class Team
 
   attr_reader :id
-  attr_accessor :name
+  attr_accessor :name, :transfer_funds
 
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
+    @transfer_funds = options['transfer_funds'].to_i
   end
 
   def save()
-    sql = "INSERT INTO teams (name) VALUES ($1) RETURNING *"
-    values = [@name]
+    sql = "INSERT INTO teams (name, transfer_funds) VALUES ($1, $2) RETURNING *"
+    values = [@name, @transfer_funds]
     team_data = SqlRunner.run(sql, values)
     @id = team_data.first()['id'].to_i
   end

@@ -8,22 +8,26 @@ Player.delete_all
 Team.delete_all
 
 team1 = Team.new ({
-  "name" => "Gryffindor"
+  "name" => "Gryffindor",
+  "transfer_funds" => 200000
   })
 team1.save
 
 team2 = Team.new ({
-  "name" => "Slytherin"
+  "name" => "Slytherin",
+  "transfer_funds" => 400000
   })
 team2.save
 
 team3 = Team.new ({
-  "name" => "Hufflepuff"
+  "name" => "Hufflepuff",
+  "transfer_funds" => 150000
   })
 team3.save
 
 team4 = Team.new ({
-  "name" => "Ravenclaw"
+  "name" => "Ravenclaw",
+  "transfer_funds" => 250000
   })
 team4.save
 

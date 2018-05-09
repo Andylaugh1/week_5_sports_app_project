@@ -4,7 +4,8 @@ DROP TABLE teams;
 
 CREATE table teams (
   id SERIAL4 PRIMARY KEY,
-  name VARCHAR(255)
+  name VARCHAR(255),
+  transfer_funds INT4
 );
 
 CREATE table players (

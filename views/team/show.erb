@@ -1,4 +1,5 @@
 <p>Team Name: <%= @team.name  %></p>
+<p>Team Transfer Funds: <%= @team.transfer_funds %></p>
 
 <form action="/teams/<%= @team.id %>/delete" method="post">
   <input type="submit" name="Delete" value="Delete Team">
