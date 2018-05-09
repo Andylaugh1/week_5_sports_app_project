@@ -38,8 +38,7 @@ end
 
 post '/players/:id/edit' do
   @player = Player.new(params)
-  @player.update()
-  @player.get_player_team_name
+  @player.update
   redirect to("/players")
 end
 
@@ -49,4 +48,19 @@ post '/players/:id/delete' do
   player = Player.find(params[:id])
   player.delete
   redirect to ('/players')
+end
+
+
+# TRANSFER A PLAYER
+get '/players/:id/transfer' do
+  @teams = Team.all
+  @players = Player.all
+  @player = Player.find(params[:id])
+  erb(:"player/transfer")
+end
+
+post '/players/:id/transfer' do
+  @player = Player.find(params[:id])
+  @player.transfer_player(params[:team_id])
+  erb(:"player/transfer_complete")
 end

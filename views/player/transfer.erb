@@ -1,0 +1,14 @@
+<form action="/players/<%= @player.id %>/transfer" method="post">
+
+  <label>
+    Select Team to Transfer to:
+    <select name="team_id">
+      <% for team in @teams %>
+      <option value="<%= team.id %>"> <%= team.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <input type="submit" value="Transfer Superstar">
+
+</form>

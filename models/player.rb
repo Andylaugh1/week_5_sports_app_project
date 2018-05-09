@@ -30,7 +30,7 @@ class Player
 
   def update()
     sql = "UPDATE players SET (first_name, last_name, position, team_id, transfer_value) =
-          ($1, $2, $3, $4, $5) WHERE id = $5"
+          ($1, $2, $3, $4, $5) WHERE id = $6"
     values = [@first_name, @last_name, @position, @team_id, @transfer_value,  @id]
     SqlRunner.run(sql, values)
   end
@@ -66,12 +66,15 @@ class Player
     end
   end
 
-  def transfer_player(new_team)
+  def transfer_player(new_team_id)
     old_team = self.get_player_team
+    new_team = Team.find(new_team_id)
+    self.team_id = new_team_id
     old_team.transfer_funds += self.transfer_value
     old_team.update()
     new_team.transfer_funds -= self.transfer_value
-    self.team_id = new_team.id
+    new_team.update
+    self.update
     return self
   end
 
