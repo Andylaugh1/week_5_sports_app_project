@@ -7,17 +7,13 @@
 
 
 <hr>
-<form action="/players/<%= @player.id %>/edit" method="get"> <input type="submit" name="Edit" value="Edit Player">
+<form action="/players/<%= @player.id %>/edit" method="get"> <input type="submit" name="Edit" value="Edit Player" class="button">
 </form>
 
-<hr>
-
-<form action="/players/<%= @player.id %>/transfer" method="get"> <input type="submit" name="Transfer" value="Transfer Player">
+<form action="/players/<%= @player.id %>/transfer" method="get"> <input type="submit" name="Transfer" value="Transfer Player" class="button">
 </form>
-
-<hr>
 
 <form action="/players/<%= @player.id %>/delete" method="post">
-  <input type="submit" name="Delete" value="Delete Player">
+  <input type="submit" name="Delete" value="Delete Player" class="delete-button">
 
 </form>

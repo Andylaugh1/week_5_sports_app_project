@@ -98,4 +98,10 @@ class Player
     SqlRunner.run(sql)
   end
 
+  def self.sort_players()
+  players = self.all()
+  sorted = players.sort_by{|player| [player.transfer_value(), player.last_name()]}
+  return sorted.reverse()
+  end
+
 end

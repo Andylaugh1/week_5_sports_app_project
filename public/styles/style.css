@@ -14,6 +14,12 @@ body {
   font-family: Helvetica;
 }
 
+a {
+  text-decoration: none;
+  color: forestgreen;
+  font-weight: bold;
+}
+
 .main {
   background-color: white;
   padding-bottom: 1000px;
@@ -47,6 +53,10 @@ body {
   margin-top: 200;
 }
 
+.table-container {
+  margin: 10px 40px 30px 40px;
+}
+
 /* .add-item label, select {
   font-size: 1em;
   text-align: left;
@@ -61,6 +71,7 @@ body {
 
 nav {
   background-color: black;
+  width: auto;
   padding: 6px;
 }
 
@@ -68,16 +79,15 @@ ul li {
   display: inline;
   margin: 0px 20px 0px 20px;
   padding: 5px 5px 5px 5px;
-  background-color: lightgreen;
 }
 
 table {
   width: 100%;
+  border: 2px solid black;
 }
 
 
-table, tr, th, td {
-  border: 2px solid black;
+tr, th, td {
   justify-content: center;
   justify-content: space-between;
   text-align: center;
@@ -94,11 +104,36 @@ th {
   background-color: lightgrey;
 }
 
+.league {
+  counter-reset: serial-number;
+}
+
+.league td:first-child:before {
+  counter-increment: serial-number;
+  content: counter(serial-number);
+}
+
 .add-superstar ul li {
   border: 3px solid black;
   background-color: white;
   text-align: center;
   background-color: lightgreen;
+}
+
+.button {
+  font-size: 1em;
+  background-color: forestgreen;
+  padding: 10px;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+.delete-button {
+  font-size: 0.8em;
+  background-color: red;
+  padding: 10px;
+  border: 1px solid black;
+  margin: 5px;
 }
 
 @media only screen and (max-width : 640px) {

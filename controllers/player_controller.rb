@@ -6,7 +6,7 @@ require_relative('../models/team.rb')
 
 # READ ALL PLAYERS
 get '/players' do
-  @players = Player.all
+  @players = Player.sort_players
   erb( :"player/index")
 end
 

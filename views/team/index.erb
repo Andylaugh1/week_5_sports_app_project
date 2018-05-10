@@ -1,7 +1,10 @@
 <h1>Current League Table</h1>
 
+<div class="table-container">
+  <div class="league">
 <table>
   <tr>
+    <th>Pos</th>
     <th>Name</th>
     <th>Played</th>
     <th>Games Won</th>
@@ -12,6 +15,8 @@
   </tr>
   <% for team in @teams  %>
   <tr>
+
+    <td></td>
     <td><a href="/teams/<%= team.id  %>"><%= team.name %></a></td>
     <td><%= team.games_played %></a></td>
     <td><%= team.calculate_victories %></a></td>
@@ -22,5 +27,7 @@
   </tr>
   <% end  %>
 </table>
+</div>
+</div>
 
 <hr>
