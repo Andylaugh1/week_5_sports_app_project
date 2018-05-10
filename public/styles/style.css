@@ -122,7 +122,8 @@ th {
 
 .button {
   font-size: 1em;
-  background-color: forestgreen;
+  background-color: #2E8B57;
+  color: white;
   padding: 10px;
   border: 1px solid black;
   margin: 5px;
