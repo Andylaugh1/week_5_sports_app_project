@@ -31,7 +31,32 @@ team4 = Team.new ({
   })
 team4.save
 
+team5 = Team.new ({
+  "name" => "Chudley Cannons",
+  "transfer_funds" => 500000
+  })
+team5.save
 
+team6 = Team.new ({
+  "name" => "Dechmont Dynamos",
+  "transfer_funds" => 40000
+  })
+team6.save
+
+team7 = Team.new ({
+  "name" => "Murieston United",
+  "transfer_funds" => 6000
+  })
+team7.save
+
+team8 = Team.new ({
+  "name" => "Real Sosobad",
+  "transfer_funds" => 60000
+  })
+team8.save
+
+
+# GAMES CREATED BELOW
 game1 = Game.new({
    "home_team_id" => team1.id,
    "away_team_id" => team2.id,
@@ -87,7 +112,7 @@ player3 = Player.new ({
   "last_name" => "Laughlin",
   "position" => "Beater",
   "team_id" => team1.id,
-  "transfer_value" => 20000
+  "transfer_value" => 8500
   })
 player3.save
 
@@ -108,6 +133,51 @@ player5 = Player.new ({
   "transfer_value" => 40000
   })
 player5.save
+
+player6 = Player.new ({
+  "first_name" => "Joe",
+  "last_name" => "Stafford",
+  "position" => "Beater",
+  "team_id" => team2.id,
+  "transfer_value" => 9000
+  })
+player6.save
+
+player7 = Player.new ({
+  "first_name" => "Richard",
+  "last_name" => "Ramson",
+  "position" => "Chaser",
+  "team_id" => team3.id,
+  "transfer_value" => 10000
+  })
+player7.save
+
+player8 = Player.new ({
+  "first_name" => "Duncan",
+  "last_name" => "Marjoribanks",
+  "position" => "Chaser",
+  "team_id" => team4.id,
+  "transfer_value" => 10000
+  })
+player8.save
+
+player9 = Player.new ({
+  "first_name" => "Cristiano",
+  "last_name" => "Ronaldo",
+  "position" => "Seeker",
+  "team_id" => team3.id,
+  "transfer_value" => 120000
+  })
+player9.save
+
+player10 = Player.new ({
+  "first_name" => "Steven",
+  "last_name" => "Gerrard",
+  "position" => "Goalkeeper",
+  "team_id" => team2.id,
+  "transfer_value" => 1000
+  })
+player10.save
 
 binding.pry
 nil
