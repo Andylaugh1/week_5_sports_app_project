@@ -6,24 +6,85 @@ h1 {
 }
 
 body {
-  color: white;
+  color: black;
   background-color: white;
   margin: 0px 100px 0px 100px;
+  background-image: url(https://orig00.deviantart.net/bd1c/f/2011/316/d/8/quidditch_by_chouette_e-d4fwiqo.jpg);
+  text-align: center;
+  font-family: Helvetica;
 }
 
 .main {
-  background-color: #DCDCDC;
+  background-color: white;
+  padding-bottom: 1000px;
+  text-align: center;
+}
+
+.add_team {
+  margin: 40px;
+  padding-bottom: 200px;
+  font-size: 1.5em;
+}
+
+.view-games {
+}
+
+.logo-image {
+  justify-content: center;
+  display: inline-block;
+}
+
+.add-result {
+  margin: 40px;
+  padding-bottom: 200px;
+  font-size: 1.2em;
+}
+
+.add-player label {
+  font-size: 1em;
+  text-align: left;
+  margin-left: 100px;
+}
+
+.add-player input, select {
+  font-size: 1em;
+  text-align: right;
+  margin-right: 100px;
 }
 
 nav {
-  background-color: lightgrey;
-  padding: 5px;
+  background-color: #54DEFD;
+  padding: 3px;
+}
+
+@media all and ( min-width: 480px ) {
+
+  nav {
+    flex-direction: row;
+  }
+
+}
+
+@media all and ( min-width: 720px ) {
+
+  nav {
+    flex-direction: row;
+  }
+
+}
+
+@media all and ( min-width: 960px ) {
+
+  nav {
+    flex-direction: row;
+  }
+
 }
 
 ul li {
   display: inline;
   margin: 0px 20px 0px 20px;
-  padding: 5px 10px 5px 10px;
+  padding: 5px 5px 5px 5px;
   border: 1px solid black;
   background-color: lightgreen;
 }
@@ -34,7 +95,7 @@ table {
 
 
 table, tr, th, td {
-  border: 2px solid white;
+  border: 2px solid black;
   justify-content: center;
   justify-content: space-between;
   text-align: center;
@@ -45,11 +106,6 @@ td {
   font-size: 1.2em;
 }
 
-td:visited { text-decoration: none; color: white; }
-td:hover { text-decoration: none; color: white; }
-td:focus { text-decoration: none; color: white; }
-td:hover, td:active { text-decoration: none; color: white }
-
 th {
   color: black;
   font-size: 1.5em;
@@ -58,8 +114,7 @@ th {
 
 .add-superstar ul li {
   border: 3px solid black;
-  width: 100%;
-  margin-left: 500px;
   background-color: white;
   text-align: center;
+  background-color: lightgreen;
 }

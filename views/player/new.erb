@@ -1,9 +1,17 @@
+<p>** Please note if you wish to add a new superstar they must have a first name, last name, position and team to start at **</p>
+
+<div class="add-player">
+
 <form action="/players" method="post">
-  <label for="player-first-name">Player First Name</label>
+  <label for="player-first-name">Player First Name:</label>
   <input type="text" name="first_name" id="player-first-name">
 
-  <label for="player-last-name">Player Last Name</label>
+  <hr>
+
+  <label for="player-last-name">Player Last Name:</label>
   <input type="text" name="last_name" id="player-last-name">
+
+  <hr>
 
   <label for="position-select">Select player position:</label>
     <select id="position-select" name="position">
@@ -13,18 +21,26 @@
       <option value="Seeker">Seeker</option>
     </select>
 
-  <label>
+    <hr>
+
+  <label for="team-select">
     Select Team to Join:
-    <select name="team_id">
+    <select id="team-select" name="team_id">
       <% for team in @teams %>
       <option value="<%= team.id %>"> <%= team.name %></option>
       <% end %>
     </select>
   </label>
 
-  <label for="player-transfer-value">Player Transfer Value</label>
+    <hr>
+
+  <label for="player-transfer-value">Player Transfer Value:</label>
   <input type="number" name="transfer_value" id="player-transfer-value">
+
+  <hr>
 
   <input type="submit" value="Add Superstar to Team">
 
 </form>
+
+</div>
