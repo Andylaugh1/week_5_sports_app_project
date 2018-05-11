@@ -43,9 +43,10 @@ class Player
     teams = Team.all
     for team in teams
       if team.id == @team_id
-        return team.name
+        result = team.name
       end
     end
+    return result
   end
 
   def get_team_funds()

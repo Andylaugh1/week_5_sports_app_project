@@ -70,14 +70,16 @@ a {
 } */
 
 nav {
+  display: flex;
   background-color: black;
   width: auto;
   padding: 6px;
+  justify-content: center;
 }
 
 ul li {
   display: inline;
-  margin: 0px 20px 0px 20px;
+  margin: 0px 6px 0px 6px;
   padding: 5px 5px 5px 5px;
 }
 
@@ -137,15 +139,33 @@ th {
   margin: 5px;
 }
 
+ol li {
+  font-family: fantasy;
+  text-align: left;
+  margin-left: 30px;
+  line-height: 70px;
+  font-size: 1.5em;
+}
+
+h2 {
+  font-family: fantasy;
+  font-size: 2.5em;
+  line-height: 70px;
+  font-style:italic;
+}
+
 @media only screen and (max-width : 640px) {
 
-	header {
+  nav {
+    flex-flow: column;
+    justify-content: center;
+  }
 
-		position: absolute;
+  ul li {
+    display: block;
+  }
 
-	}
-
-	nav ul, nav:active ul {
+	/* nav ul, nav:active ul {
 		display: none;
 		position: absolute;
 		padding: 20px;
@@ -169,4 +189,4 @@ th {
 	nav:hover ul {
 
 		display: block;
-	}
+	} */
