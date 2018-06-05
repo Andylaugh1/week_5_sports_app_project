@@ -1,5 +1,5 @@
 <p>Team Name: <%= @team.name  %></p>
-<p>Team Transfer Funds: <%= @team.transfer_funds %></p>
+<p>Team Transfer Funds: £<%= @team.transfer_funds %></p>
 
 <form action="/teams/<%= @team.id %>/edit" method="get"> <input type="submit" name="Edit" value="Edit Team" class="button">
 </form>

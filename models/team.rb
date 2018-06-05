@@ -137,22 +137,6 @@ class Team
     return goal_difference
   end
 
-  # def self.sort_by_goal_difference()
-  #   team_goals= self.all
-  #   sorted_teams2 = team_goals.sort { |t, s| s.calculate_team_goal_difference <=> t.calculate_team_goal_difference }
-  #   return sorted_teams2
-  # end
-
-  # def self.sort_by_points()
-  #   team_points = self.all
-  #   sorted_teams = team_points.sort { |t, s| s.calculate_team_points <=> t.calculate_team_points
-  #     if s.calculate_team_points == t.calculate_team_points
-  #       self.sort_by_goal_difference
-  #     end
-  #   }
-  #   return sorted_teams
-  # end
-
   def self.sort_teams()
   teams = self.all()
   sorted = teams.sort_by{|team| [team.calculate_team_points(), team.calculate_team_goal_difference()]}
